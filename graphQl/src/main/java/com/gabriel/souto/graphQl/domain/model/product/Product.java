@@ -1,10 +1,7 @@
 package com.gabriel.souto.graphQl.domain.model.product;
 
 import com.gabriel.souto.graphQl.domain.model.category.Category;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,10 +13,12 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private BigDecimal price;
-    @ManyToMany()
+    @ManyToOne()
     @JoinColumn(name = "category_id", insertable = false, updatable = false)
     private Category category;
     @Column(name = "category_id")
