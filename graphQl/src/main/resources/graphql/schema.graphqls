@@ -1,5 +1,5 @@
 type Mutation{
-    addCategory(category: CategoryInput): Category
+    addCategory(categoryInput: CategoryInput): Category
 }
 input CategoryInput{
     name: String!
