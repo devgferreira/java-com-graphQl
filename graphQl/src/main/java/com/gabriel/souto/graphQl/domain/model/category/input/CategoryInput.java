@@ -1,4 +1,4 @@
-package com.gabriel.souto.graphQl.domain.model.category.request;
+package com.gabriel.souto.graphQl.domain.model.category.input;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
